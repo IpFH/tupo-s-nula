@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define DEF 0
 #define LWR 1
@@ -17,7 +18,7 @@
 
         tri-layer {
             if-layers = <1 2>;
-            then-layer = <4>;
+            then-layer = <5>;
         };
     };
 
@@ -26,10 +27,10 @@
 
         default_layer {
             bindings = <
-&to 3            &kp Q  &kp W  &kp E      &kp R            &kp T      &kp Y      &kp U           &kp I      &kp O    &kp P     &kp LBKT
-&mt LCTRL GRAVE  &kp A  &kp S  &kp D      &kp F            &kp G      &kp H      &kp J           &kp K      &kp L    &kp SEMI  &mt RCTRL SQT
-&mt LALT MINUS   &kp Z  &kp X  &kp C      &kp V            &kp B      &kp N      &kp M           &kp COMMA  &kp DOT  &kp FSLH  &mt RALT BSLH
-                               &lt 2 TAB  &mt LSHFT SPACE  &lt 1 RET  &lt 1 ESC  &mt RSHFT BSPC  &lt 2 DEL
+&mt LEFT_WIN RIGHT_BRACKET  &kp Q  &kp W  &kp E      &kp R            &kp T      &kp Y      &kp U           &kp I      &kp O    &kp P     &kp LBKT
+&mt LCTRL GRAVE             &kp A  &kp S  &kp D      &kp F            &kp G      &kp H      &kp J           &kp K      &kp L    &kp SEMI  &mt RCTRL SQT
+&mt LALT MINUS              &kp Z  &kp X  &kp C      &kp V            &kp B      &kp N      &kp M           &kp COMMA  &kp DOT  &kp FSLH  &mt RALT BSLH
+                                          &lt 2 TAB  &mt LSHFT SPACE  &lt 1 RET  &lt 1 ESC  &mt RSHFT BSPC  &lt 2 DEL
             >;
         };
 
@@ -38,7 +39,7 @@
 &mt LGUI F1     &kp F2    &kp F3  &kp F4    &kp F5    &kp F6     &kp F7     &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
 &mt LCTRL PLUS  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &mt RCTRL MINUS
 &mt LALT EQUAL  &kp N1    &kp N2  &kp N3    &kp N4    &kp N5     &kp N6     &kp N7    &kp N8    &kp N9    &kp N0    &kp RALT
-                                  &trans    &trans    &trans     &trans     &trans    &trans
+                                  &trans    &to 3     &trans     &trans     &trans    &trans
             >;
         };
 
@@ -53,10 +54,19 @@
 
         layer_4_for_Game {
             bindings = <
-&mt ESC KP_NUMBER_7  &kp Q  &kp W  &kp E            &kp R      &kp T            &kp Y  &kp U   &kp I      &kp O       &kp P          &kp ENTER
-&kp LSHFT            &kp A  &kp S  &kp D            &kp F      &kp G            &kp H  &kp J   &kp K      &kp L       &kp SEMICOLON  &kp RSHFT
-&kp LCTRL            &kp Z  &kp X  &kp C            &kp V      &mt TAB B        &kp N  &kp M   &kp COMMA  &kp PERIOD  &kp SLASH      &kp RCTRL
-                                   &kp KP_NUMBER_8  &kp SPACE  &kp KP_NUMBER_9  &to 0  &trans  &trans
+&mt ESC KP_NUMBER_7  &kp Q  &kp W  &kp E              &kp R      &kp T            &kp Y  &kp U   &kp I      &kp O       &kp P          &kp ENTER
+&kp LSHFT            &kp A  &kp S  &kp D              &kp F      &kp G            &kp H  &kp J   &kp K      &kp L       &kp SEMICOLON  &kp RSHFT
+&kp LCTRL            &kp Z  &kp X  &kp C              &kp V      &kt B            &kp N  &kp M   &kp COMMA  &kp PERIOD  &kp SLASH      &kp RCTRL
+                                   &lt 4 KP_NUMBER_8  &kp SPACE  &kp KP_NUMBER_9  &to 0  &trans  &trans
+            >;
+        };
+
+        lower_layer_4_for_Gamef {
+            bindings = <
+&kp NUMBER_2  &kp NUMBER_3  &trans        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans  &trans  &trans  &trans  &trans  &trans
+&kp NUMBER_1  &trans        &trans        &trans        &kp TAB       &kp F2        &trans  &trans  &trans  &trans  &trans  &trans
+&kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp F1        &kp F3        &kp F5        &trans  &trans  &trans  &trans  &trans  &trans
+                                          &trans        &trans        &to 0         &trans  &trans  &trans
             >;
         };
 
